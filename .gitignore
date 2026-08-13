@@ -80,3 +80,7 @@ dmypy.json
 # Ruff
 .ruff_cache/
 
+# Local docs (not published)
+新手教学指南.md
+更新日志-*.md
+
