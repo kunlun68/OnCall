@@ -1,4 +1,4 @@
-# SuperBizAgent
+# OnCall智能助手
 
 > 企业级智能对话和运维助手，支持 RAG 知识库问答和 AIOps 智能诊断
 
@@ -23,14 +23,6 @@
 - **向量库**: Milvus + 百炼 Rerank 重排
 - **工具协议**: MCP (Model Context Protocol)
 
-## 📚 文档
-
-- [新手教学指南](新手教学指南.md) — 从零看懂本项目（架构、核心机制、逐文件精讲）
-- [更新日志：重排模型](更新日志-重排模型.md)
-- [更新日志：多文档类型](更新日志-多文档类型.md)
-- [更新日志：上下文压缩](更新日志-上下文压缩.md)
-- [更新日志：Skill 业务](更新日志-Skill业务.md)
-- [MCP 服务说明](mcp_servers/README.md)
 
 ## 🚀 快速开始
 
@@ -69,8 +61,6 @@ make start
 ```
 
 #### Windows 环境（PowerShell/CMD）
-
-如果Windows 不支持 `make` 命令，可以手动执行以下步骤以启动服务：
 
 ```powershell
 # 1. 克隆项目
@@ -122,7 +112,7 @@ timeout /t 5
 python -c "import requests, os, time; [requests.post('http://localhost:9900/api/upload', files={'file': open(f'aiops-docs/{f}', 'rb')}) or time.sleep(1) for f in os.listdir('aiops-docs') if f.endswith('.md')]"
 ```
 
-**Windows 一键启动脚本**（推荐）
+**Windows 一键启动脚本**
 
 使用启动脚本：
 
@@ -248,27 +238,6 @@ super_biz_agent_py/
 ├── uv.lock                                 # uv 依赖锁定文件
 ├── pyrightconfig.json                      # Pyright 类型检查配置
 └── README.md                               # 项目说明
-```
-
-## ⚙️ 配置说明
-
-通过 `.env` 文件配置：
-
-```bash
-# 阿里云LLM DashScope 配置（必填）
-# 秘钥管理： https://bailian.console.aliyun.com/cn-beijing/?spm=5176.29597918.J_SEsSjsNv72yRuRFS2VknO.2.61ac133ccTVQLw&tab=demohouse#/api-key
-DASHSCOPE_API_KEY=your-api-key （配置你自己的秘钥）
-DASHSCOPE_API_BASE=https://dashscope.aliyuncs.com/compatible-mode/v1  # 不配置则默认会使用新加坡站点
-DASHSCOPE_MODEL=qwen-max
-
-# Milvus 配置
-MILVUS_HOST=localhost
-MILVUS_PORT=19530
-
-# RAG 配置
-RAG_TOP_K=3
-CHUNK_MAX_SIZE=800
-CHUNK_OVERLAP=100
 ```
 
 ## 🎯 AIOps 智能运维
