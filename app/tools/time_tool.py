@@ -1,5 +1,3 @@
-"""时间工具 - 获取当前时间信息"""
-
 from datetime import datetime
 from zoneinfo import ZoneInfo
 

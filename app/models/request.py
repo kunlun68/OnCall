@@ -1,8 +1,3 @@
-"""请求数据模型
-
-定义 API 请求的 Pydantic 模型
-"""
-
 from pydantic import BaseModel, Field
 
 

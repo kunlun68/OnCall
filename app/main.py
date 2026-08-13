@@ -1,8 +1,3 @@
-"""FastAPI 应用入口
-
-主应用程序，配置路由、中间件、静态文件等
-"""
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles

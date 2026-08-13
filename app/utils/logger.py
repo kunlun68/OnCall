@@ -1,8 +1,3 @@
-"""日志配置模块
-
-使用 Loguru 配置应用日志
-"""
-
 import sys
 from loguru import logger
 from app.config import config

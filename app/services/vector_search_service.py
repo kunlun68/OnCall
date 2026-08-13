@@ -1,5 +1,3 @@
-"""向量检索服务模块"""
-
 from typing import Any, Dict, List
 
 from loguru import logger

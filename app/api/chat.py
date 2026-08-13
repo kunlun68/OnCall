@@ -1,8 +1,3 @@
-"""对话接口
-
-提供基于 RAG Agent 的普通对话和流式对话接口
-"""
-
 import json
 from fastapi import APIRouter, HTTPException
 from sse_starlette.sse import EventSourceResponse

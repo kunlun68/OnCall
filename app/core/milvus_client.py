@@ -1,5 +1,3 @@
-"""Milvus 客户端工厂模块"""
-
 from loguru import logger
 from pymilvus import (
     Collection,

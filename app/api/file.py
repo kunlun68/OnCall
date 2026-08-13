@@ -1,5 +1,3 @@
-"""文件上传接口模块"""
-
 from pathlib import Path
 
 from fastapi import APIRouter, File, HTTPException, UploadFile

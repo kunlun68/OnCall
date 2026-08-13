@@ -1,5 +1,3 @@
-"""健康检查接口"""
-
 from typing import Any
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse

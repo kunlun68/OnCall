@@ -1,8 +1,3 @@
-"""
-MCP 客户端管理
-提供全局单例的 MCP 客户端，避免重复初始化
-"""
-
 import asyncio
 from typing import Optional, Dict, Any, List, Union
 

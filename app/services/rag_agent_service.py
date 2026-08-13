@@ -1,9 +1,3 @@
-"""RAG Agent 服务 - 基于 LangGraph 的智能代理
-
-使用 langchain_qwq 的 ChatQwen 原生集成，
-支持真正的流式输出和更好的模型适配。
-"""
-
 from typing import Annotated, Any, AsyncGenerator, Dict, Sequence
 
 from langchain.agents import create_agent

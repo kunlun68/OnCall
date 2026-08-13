@@ -1,8 +1,3 @@
-"""响应数据模型
-
-定义 API 响应的 Pydantic 模型
-"""
-
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 

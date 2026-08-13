@@ -1,5 +1,3 @@
-"""知识检索工具 - 从向量数据库中检索相关信息"""
-
 from typing import List, Tuple
 
 from langchain_core.documents import Document

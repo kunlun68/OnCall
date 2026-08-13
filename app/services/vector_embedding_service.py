@@ -1,5 +1,3 @@
-"""向量嵌入服务模块 - 基于 LangChain Embeddings 标准接口"""
-
 from typing import List
 
 from langchain_core.embeddings import Embeddings

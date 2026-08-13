@@ -1,7 +1,3 @@
-"""
-通用 Plan-Execute-Replan 状态定义
-"""
-
 from typing import List, TypedDict, Annotated
 import operator
 

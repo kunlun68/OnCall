@@ -1,7 +1,3 @@
-"""
-AIOps 智能运维接口
-"""
-
 import json
 from fastapi import APIRouter
 from sse_starlette.sse import EventSourceResponse

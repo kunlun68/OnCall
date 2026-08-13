@@ -1,5 +1,3 @@
-"""向量存储管理器 - 封装 Milvus VectorStore 操作"""
-
 from typing import List
 
 from langchain_core.documents import Document

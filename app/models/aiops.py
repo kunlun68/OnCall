@@ -1,7 +1,3 @@
-"""
-AIOps 请求和响应模型
-"""
-
 from typing import Optional, List, Dict, Any
 from pydantic import BaseModel, Field
 

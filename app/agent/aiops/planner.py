@@ -1,7 +1,3 @@
-"""
-Planner 节点：制定执行计划
-"""
-
 from textwrap import dedent
 from typing import Dict, Any, List
 from langchain_core.prompts import ChatPromptTemplate

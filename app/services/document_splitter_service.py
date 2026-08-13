@@ -1,5 +1,3 @@
-"""文档分割服务模块 - 基于 LangChain 的智能文档分割"""
-
 from pathlib import Path
 from typing import List
 
