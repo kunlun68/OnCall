@@ -254,9 +254,6 @@ super_biz_agent_py/
 ### 快速测试
 
 ```bash
-# 服务已通过 make init 自动启动
-# 如需重启服务：make restart
-
 # 访问 Web 界面，点击"智能运维与诊断工具"
 # 或使用 API
 curl -X POST "http://localhost:9900/api/aiops" \
@@ -273,120 +270,6 @@ curl -X POST "http://localhost:9900/api/aiops" \
 4. 输出诊断报告 → 根因分析 + 运维建议
 ```
 
-## 📝 开发指南
-
-### 常用命令
-
-```bash
-# 项目管理
-make init              # 一键初始化（Docker + 服务 + 文档）
-make start             # 启动所有服务
-make stop              # 停止所有服务
-make restart           # 重启所有服务
-
-# 依赖管理
-make install-dev       # 安装开发依赖
-make sync              # 同步依赖
-
-# Docker 管理
-make up                # 启动 Docker 容器
-make down              # 停止 Docker 容器
-
-# 代码质量
-make format            # 格式化代码
-make lint              # 代码检查
-```
-
-
-## 🐛 常见问题
-
-### Windows 环境问题
-
-#### 1. `make` 命令不可用
-Windows 不支持 `make` 命令，请使用提供的批处理脚本：
-```powershell
-# 启动服务
-.\start-windows.bat
-
-# 停止服务
-.\stop-windows.bat
-```
-
-#### 2. PowerShell 执行策略限制
-如果遇到 "无法加载文件，因为在此系统上禁止运行脚本" 错误：
-```powershell
-# 临时允许脚本执行（管理员权限）
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-
-# 或者使用 CMD 而不是 PowerShell
-cmd
-.\start-windows.bat
-```
-
-#### 3. 端口被占用（Windows）
-```powershell
-# 查看占用端口的进程
-netstat -ano | findstr :9900
-
-# 结束进程（替换 PID 为实际进程 ID）
-taskkill /F /PID <PID>
-```
-
-### 通用问题
-
-### API Key 错误
-```bash
-# 检查环境变量
-cat .env | grep DASHSCOPE_API_KEY    # Linux/macOS
-type .env | findstr DASHSCOPE_API_KEY  # Windows
-```
-
-### Milvus 连接失败
-```bash
-# 确保本机有 Docker 服务并且已经启动（可以使用 Docker Desktop）
-
-# 检查 Milvus 状态
-docker ps | grep milvus
-
-# 重启 Milvus（使用 docker compose）
-docker compose -f vector-database.yml restart
-
-# 或者重启单个服务
-docker compose -f vector-database.yml restart standalone
-```
-
-### 服务无法启动
-
-**Linux/macOS:**
-```bash
-# 查看服务日志
-tail -f logs/app_$(date +%Y-%m-%d).log  # FastAPI 主服务（Loguru 日志）
-tail -f mcp_cls.log                      # CLS MCP 服务
-tail -f mcp_monitor.log                  # Monitor MCP 服务
-
-# 检查端口占用
-lsof -i :9900  # FastAPI
-lsof -i :8003  # CLS MCP
-lsof -i :8004  # Monitor MCP
-```
-
-**Windows:**
-```powershell
-# 查看服务日志（获取今天的日期）
-$today = Get-Date -Format "yyyy-MM-dd"
-type logs\app_$today.log  # FastAPI 主服务（Loguru 日志）
-type mcp_cls.log          # CLS MCP 服务
-type mcp_monitor.log      # Monitor MCP 服务
-
-# 或者查看最新的日志文件
-Get-ChildItem logs\*.log | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Get-Content -Tail 50
-
-# 检查端口占用
-netstat -ano | findstr :9900  # FastAPI
-netstat -ano | findstr :8003  # CLS MCP
-netstat -ano | findstr :8004  # Monitor MCP
-```
-
 ## 📚 参考资源
 
 - [FastAPI 文档](https://fastapi.tiangolo.com/)
@@ -395,7 +278,3 @@ netstat -ano | findstr :8004  # Monitor MCP
 - [阿里云 DashScope](https://dashscope.aliyun.com/)
 - [MCP 协议](https://modelcontextprotocol.io/)
 
-## 📄 许可证
-author： chief
-
-MIT License
